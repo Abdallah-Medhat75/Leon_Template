@@ -2,6 +2,8 @@
 :root {
     --mainColor: #10cab7;
     --secondaryColor: #2c4755;
+    --sectionPadding: 60px;
+    --sectionBackground: #F6F6F6;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -18,6 +20,15 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
 }
 /* Small */
 @media (min-width: 768px) {
@@ -104,10 +115,9 @@ header .links .icon span:last-child {
     width: 100%;
 }
 header .links ul {
-    background-color: #F6F6F6;
+    background-color: var(--sectionBackground);
     display: none;
     min-width: 200px;
-    list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -119,7 +129,7 @@ header .links ul::before {
     content: "";
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #F6F6F6 transparent;
+    border-color: transparent transparent var(--sectionBackground) transparent;
     position: absolute;
     right: 5px;
     top: -20px;
@@ -169,9 +179,9 @@ header .links ul li a:hover {
 /* End Landing */
 /* Start Features */
 .features {
-    background-color: #F6F6F6;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    background-color: var(--sectionBackground);
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
 }
 .features .container {
     display: grid;
@@ -197,11 +207,11 @@ header .links ul li a:hover {
 /* End Features */
 /* Start Services */
 .services {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
 }
 .services .services-content {
-    margin-top: 100px;
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
@@ -261,3 +271,168 @@ header .links ul li a:hover {
     }
 }
 /* End Services */
+/* Start Portfolio */
+.portfolio {
+    background-color: var(--sectionBackground);
+    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
+}
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.portfolio .portfolio-content .card {
+    background-color: white;
+}
+.portfolio .portfolio-content .card img {
+    max-width: 100%; /* To Make All The Images The Same Width With their conatiner, which is .card */
+}
+.portfolio .portfolio-content .card .info {
+    padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* End Portfolio */
+/* Start About */
+.about {
+    padding-top: var(--sectionPadding);
+    padding-bottom: calc(var(--sectionPadding) + 60px);
+}
+.about .container .about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 70px;
+}
+.about .about-content .image {
+    position: relative;
+    height: 375px;
+}
+.about .about-content .image::before {
+    content: "";
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.about .about-content .image::after {
+    --imageBorder: 80px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 70%;
+    border-left: var(--imageBorder) solid var(--mainColor);
+    border-bottom: var(--imageBorder) solid var(--mainColor);
+    left: 40%;
+    top: calc((-1 * var(--imageBorder)) / 2);
+    z-index: -1;
+}
+.about .container .about-content .col img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.about .container .about-content .col h4 {
+    margin-bottom: 50px;
+    line-height: 2;
+}
+.about .container .about-content .col span {
+    background-color: var(--mainColor);
+    display: block;
+    width: 50%;
+    height: 3px;
+}
+.about .container .about-content .col p {
+    color: #777;
+    line-height: 2;
+}
+@media (max-width: 714px) {
+    .about .container .about-content {
+        text-align: center;
+    }
+
+    .about .container .about-content .col span {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+@media (max-width: 991px) {
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+        display: none;
+    }
+}
+/* End About */
+/* Start Contact */
+.contact {
+    padding-top: var(--sectionPadding);
+    background-color: var(--sectionBackground);
+    padding-bottom: var(--sectionPadding);
+}
+.contact .contact-content {
+    text-align: center;
+}
+.contact .contact-content h1 {
+    font-size: 40px;
+    color: var(--secondaryColor);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .contact-content > a {
+    color: var(--mainColor);
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: block;
+}
+.contact .contact-content h1:nth-of-type(2) {
+    color: var(--mainColor);
+}
+.contact .find-us {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+.contact .find-us ul {
+    display: inline-flex;
+}
+.contact .find-us ul li {
+    margin-left: 5px;
+    color: var(--secondaryColor);
+}
+@media (max-width: 767px) {
+    .contact .contact-content h1,
+    .contact .contact-content > a {
+        font-size: 25px;
+    }
+}
+/* End Contact */
+/* Start footer */
+footer {
+    background-color: var(--secondaryColor);
+    color: white;
+    font-size: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+footer span {
+    color: var(--mainColor);
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    footer {
+        font-size: 14px;
+    }
+}
+/* End footer */
