@@ -1,6 +1,7 @@
 /* Start Variables */
 :root {
     --mainColor: #10cab7;
+    --secondaryColor: #2c4755;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -37,6 +38,32 @@ body {
     }
 }
 /* End Global Rules */
+/* Start Compnents */
+.special-heading {
+    font-size: 100px;
+    text-align: center;
+    color: #ebeced;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+.special-heading + p {
+    color: #797979;
+    transform: translateY(-50px);
+    font-size: 20px;
+    text-align: center;
+}
+@media (max-width: 767px)
+{
+    .special-heading {
+        font-size: 60px;
+    }
+    .special-heading + p {
+        transform: translateY(-40px);
+        font-size: 16px;
+    }
+}
+/* End Compnents */
 /* Start Header */
 header {
     padding: 20px;
@@ -168,3 +195,69 @@ header .links ul li a:hover {
     font-size: 17px;
 }
 /* End Features */
+/* Start Services */
+.services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .services-content {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.services .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media  (max-width: 767px) {
+    .services .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services i {
+    color: var(--mainColor);
+    flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+    flex: 1;
+}
+.services h3 {
+    margin: 0 0 20px;
+}
+.services p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.services .services-content .image {
+    width: 260px;
+    text-align: center;
+    position: relative;
+    /* z-index: 1; */
+}
+.services .services-content .image::before {
+    content: "";
+    color: white;
+    background-color: var(--secondaryColor);
+    height: 140%;
+    width: 100px;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.services .services-content .image img {
+    width: 100%;
+    z-index: 1;
+}
+@media (max-width: 1199px) {
+    .image-column {
+        display: none;
+    }
+}
+/* End Services */
