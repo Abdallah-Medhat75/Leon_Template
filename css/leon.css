@@ -11,6 +11,8 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+html {
     scroll-behavior: smooth;
 }
 body {
@@ -21,6 +23,9 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+header .links ul.active {
+    display: block;
 }
 ul {
     list-style: none;
@@ -135,9 +140,9 @@ header .links ul::before {
     right: 5px;
     top: -20px;
 }
-header .links:hover ul {
+/* header .links:hover ul {
     display: block;
-}
+} */
 header .links ul li:not(:last-child) {
     border-bottom: 2px solid #eee;
 }
