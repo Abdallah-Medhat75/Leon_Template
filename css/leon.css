@@ -4,6 +4,7 @@
     --secondaryColor: #2c4755;
     --sectionPadding: 60px;
     --sectionBackground: #F6F6F6;
+    --mainTransition: 0.3s;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -56,6 +57,23 @@ a {
 }
 /* End Global Rules */
 /* Start Compnents */
+.scroll-to-top {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: var(--mainTransition);
+    z-index: 90;
+}
 .special-heading {
     font-size: 100px;
     text-align: center;
@@ -83,7 +101,11 @@ a {
 /* End Compnents */
 /* Start Header */
 header {
+    background-color: white;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 header .container {
     display: flex;
